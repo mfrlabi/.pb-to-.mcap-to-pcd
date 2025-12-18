@@ -1,5 +1,21 @@
 # .pb-to-.mcap-to-pcd
 
+1. .pb to .mcap
+---------------------------
+labi@lb:~/ros2_ws$ source install/setup.bash 
+labi@lb:~/ros2_ws$ colcon build --symlink-install
+
+
+    ros2 run pb_to_ros2_bag pb_to_mcap \ /home/labi/ws_livox/a13/data_2025-12-17-14-41-21
+
+
+or
+
+    ros2 run pb_to_ros2_bag pb_to_mcap \
+      ~/ws_livox/a13/data_2025-12-17-14-41-21
+
+
+
 
 cd ~/ws_livox
 colcon build --packages-select pcd_saver
@@ -35,3 +51,7 @@ Copy code
 source ~/ws_livox/install/setup.bash
 cd ~/ws_livox/a13/a13_ros2_mcap1
 ros2 bag play a13_ros2_mcap_0.mcap
+
+
+
+
