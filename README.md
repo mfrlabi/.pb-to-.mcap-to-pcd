@@ -1,1 +1,37 @@
 # .pb-to-.mcap-to-pcd
+
+
+cd ~/ws_livox
+colcon build --packages-select pcd_saver
+source install/setup.bash
+2️⃣ Verify ROS can see the executable
+bash
+Copy code
+ros2 pkg executables pcd_saver
+✅ Expected output
+nginx
+Copy code
+pcd_saver_custommsg
+If you see this → everything is wired correctly.
+
+3️⃣ Run your node (THIS is the correct command)
+bash
+Copy code
+ros2 run pcd_saver pcd_saver_custommsg
+You should see:
+
+css
+Copy code
+[INFO] Saving PCD frames to /home/labi/pcd_output
+✅ Final MCAP → PCD conversion
+Terminal 1
+bash
+Copy code
+source ~/ws_livox/install/setup.bash
+ros2 run pcd_saver pcd_saver_custommsg
+Terminal 2
+bash
+Copy code
+source ~/ws_livox/install/setup.bash
+cd ~/ws_livox/a13/a13_ros2_mcap1
+ros2 bag play a13_ros2_mcap_0.mcap
