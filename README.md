@@ -13,14 +13,14 @@ labi@lb:
     ~/ros2_ws$ colcon build --symlink-install
 
 
-    ros2 run pb_to_ros2_bag pb_to_mcap \ /home/labi/ws_livox/a13/data_2025-12-17-14-41-21
+    ros2 run pb_to_ros2_bag pb_to_mcap /home/labi/ws_livox/a13/data_2025-12-17-14-41-21
 
 
-or
+or 
 
     ros2 run pb_to_ros2_bag pb_to_mcap \
       ~/ws_livox/a13/data_2025-12-17-14-41-21
-
+use '\' if you want Multi-line (only if you really want line breaks)
 
 
 2. .mcap to .pcd
